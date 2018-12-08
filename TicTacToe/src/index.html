@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Election Results</title>
+
+   <!-- Bootstrap -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+
+   <style>
+
+   * {
+    font-family: "Comic Sans MS";
+   }
+
+   table {
+      width: 80%;
+   }
+   th {
+      width: 33%;
+      position: relative;
+   }
+   th:after {
+      content: '';
+      display: block;
+      margin-top: 100%;
+   }
+   th .tabContent {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: "#F0F0F0";
+      text-align: center;
+      font-size: 120%;
+      line-height: 300%;
+      border: 1px solid black;
+   }
+
+   </style>
+</head>
+<body>
+   <div class="container" style="width: 650px;">
+      <div class="row">
+         <div class="col-lg-12">
+            <h1 class="text-center" id="titleContent">Tic Tac Toe</h1>
+
+            <div id="content">
+
+               <table align="center">
+                  <tr>
+                     <th><div class="tabContent" id="cell_1"></div></th>
+                     <th><div class="tabContent" id="cell_2"></div></th>
+                     <th><div class="tabContent" id="cell_3"></div></th>
+                  </tr>
+                  <tr>
+                     <th><div class="tabContent" id="cell_4"></div></th>
+                     <th><div class="tabContent" id="cell_5"></div></th>
+                     <th><div class="tabContent" id="cell_6"></div></th>
+                  </tr>
+                  <tr>
+                     <th><div class="tabContent" id="cell_7"></div></th>
+                     <th><div class="tabContent" id="cell_8"></div></th>
+                     <th><div class="tabContent" id="cell_9"></div></th>
+                  </tr>
+               </table>
+               <br/>
+               <p id="teamTurn" class="text-center"></p>
+               <p id="round" class="text-center"></p>
+               <hr/>
+               <form onSubmit="App.endRoundApp(); return false;">
+                  <div style="text-align:center;">
+                     <button type="submit" class="btn btn-primary">End Round</button>
+                  </div>
+               </form>
+               <hr/>
+               <p id="contractAddress" class="text-center"></p>
+               <p id="pot" class="text-center"></p>
+               <p id="ownerAddress" class="text-center"></p>
+               <hr/>
+               <p id="accountAddress" class="text-center"></p>
+               <p id="accountBalance" class="text-center"></p>
+               <hr/>
+
+               <h2 id="titleContent">Team A</h2>
+               <table class="table">
+                  <thead>
+                     <tr align="center">
+                        <td scope="col">Address</td>
+                        <td scope="col"># Bets</td>
+                        <td scope="col">Amount Bet (ETH)</td>
+                     </tr>
+                  </thead>
+                  <tbody id="TeamAplayers">
+                  </tbody>
+               </table>
+               <hr/>
+
+               <h2 id="titleContent">Team B</h2>
+               <table class="table">
+                  <thead>
+                     <tr align="center">
+                        <td scope="col">Address</td>
+                        <td scope="col"># Bets</td>
+                        <td scope="col">Amount Bet (ETH)</td>
+                     </tr>
+                  </thead>
+                  <tbody id="TeamBplayers">
+                  </tbody>
+               </table>
+
+            </div>
+
+         </div>
+      </div>
+   </div>
+
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/web3.min.js"></script>
+   <script src="js/truffle-contract.js"></script>
+   <script src="js/app.js"></script>
+</body>
+</html>
